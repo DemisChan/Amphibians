@@ -35,7 +35,7 @@ class AmphibianListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val binding = FragmentAmphibianListBinding.inflate(inflater)
-        viewModel.getAmphibiansList()
+        viewModel.getAmphibianList()
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
         binding.recyclerView.adapter = AmphibianListAdapter(AmphibianListener { amphibian ->

@@ -21,7 +21,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.amphibians.network.Amphibian
 import com.example.amphibians.network.AmphibianApi
-import com.example.amphibians.network.AmphibianApiService
 import kotlinx.coroutines.launch
 
 enum class AmphibianApiStatus { LOADING, ERROR, DONE }
@@ -37,9 +36,9 @@ class AmphibianViewModel : ViewModel() {
     private val _amphibian = MutableLiveData<Amphibian>()
     val amphibian: LiveData<Amphibian> = _amphibian
 
-    fun getAmphibiansList() {
+    fun getAmphibianList() {
+        _status.value = AmphibianApiStatus.LOADING
         viewModelScope.launch {
-            _status.value = AmphibianApiStatus.LOADING
             try {
                 _amphibians.value = AmphibianApi.retrofitService.getAmphibians()
                 _status.value = AmphibianApiStatus.DONE
