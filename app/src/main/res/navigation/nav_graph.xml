@@ -23,7 +23,7 @@
     <fragment
         android:id="@+id/amphibianListFragment"
         android:name="com.example.amphibians.ui.AmphibianListFragment"
-        android:label="AmphibianListFragment"
+        android:label="Amphibian List"
         tools:layout="@layout/fragment_amphibian_list">
         <action
             android:id="@+id/action_amphibianListFragment_to_amphibianDetailFragment"
@@ -32,6 +32,6 @@
     <fragment
         android:id="@+id/amphibianDetailFragment"
         android:name="com.example.amphibians.ui.AmphibianDetailFragment"
-        android:label="fragment_amphibian_detail"
+        android:label="Amphibian Details"
         tools:layout="@layout/fragment_amphibian_detail" />
 </navigation>
